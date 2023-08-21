@@ -14,73 +14,61 @@
 <body>
 
     <div class="header">
-    <nav class="navbar navbar-expand-lg  bg-transparent">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-        <h3>Market Pulse</h3>
-        </a>
-    </div>
-</nav>
+        <nav class="navbar navbar-expand-lg  bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <h3>Market Pulse</h3>
+                </a>
+            </div>
+        </nav>
         <div class="inner-header flex">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="container">
-                           
-
                             <div class="faq-drawer">
                                 <input class="faq-drawer__trigger" id="faq-drawer" type="checkbox" /><label
                                     class="faq-drawer__title" for="faq-drawer">Marca 1</label>
                                 <div class="faq-drawer__content-wrapper">
                                     <div class="faq-drawer__content">
-                                        <!-- Lista de modelos de la Marca 1 -->
                                         <ul>
                                             <li><a class="btn-modal" href="#">Modelo 1</a></li>
                                             <li><a class="btn-modal" href="#">Modelo 2</a></li>
                                             <li><a class="btn-modal" href="#">Modelo 3</a></li>
-                                            <!-- Agrega más modelos aquí -->
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="faq-drawer">
                                 <input class="faq-drawer__trigger" id="faq-drawer-2" type="checkbox" /><label
                                     class="faq-drawer__title" for="faq-drawer-2">Marca 2</label>
                                 <div class="faq-drawer__content-wrapper">
                                     <div class="faq-drawer__content">
-                                        <!-- Lista de modelos de la Marca 2 -->
                                         <ul>
                                             <li><a class="btn-modal" href="#">Modelo 1</a></li>
                                             <li><a class="btn-modal" href="#">Modelo 2</a></li>
                                             <li><a class="btn-modal" href="#">Modelo 3</a></li>
-                                            <!-- Agrega más modelos aquí -->
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="faq-drawer">
                                 <input class="faq-drawer__trigger" id="faq-drawer-3" type="checkbox" /><label
                                     class="faq-drawer__title" for="faq-drawer-3">Marca 3</label>
                                 <div class="faq-drawer__content-wrapper">
                                     <div class="faq-drawer__content">
-                                        <!-- Lista de modelos de la Marca 3 -->
                                         <ul>
                                             <li><a class="btn-modal" href="#">Modelo 1</a></li>
                                             <li><a class="btn-modal" href="#">Modelo 2</a></li>
                                             <li><a class="btn-modal" href="#">Modelo 3</a></li>
-                                            <!-- Agrega más modelos aquí -->
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="col-md-6">
-                    <img src="./assets/img/phone.png" width="400px" height="400px" alt="GIF Descargado">
+                        <img src="./assets/img/phone.png" width="400px" height="400px" alt="GIF Descargado">
                     </div>
                 </div>
             </div>
@@ -101,7 +89,6 @@
             </svg>
         </div>
     </div>
-
     <div class="content flex">
         <p>Design by <a href="https://epsiweb.com/" target="_blank">Epsiweb</a></p>
     </div>
@@ -122,10 +109,6 @@
                 culpa, doloribus fugit eaque dolorum unde ipsam itaque odit illum
                 quisquam ipsum, aut quis.
             </p>
-            <!-- <div class="buttons">
-                <button class="modal__button modal__button--yes">Yes!</button>
-                <button class="modal__button modal__button--no">No</button>
-            </div> -->
         </div>
     </div>
 
