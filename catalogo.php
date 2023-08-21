@@ -13,18 +13,13 @@
 </head>
 
 <body>
-
     <div class="header">
-        <nav class="navbar navbar-expand-lg  bg-transparent">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <h3>Market Pulse</h3>
-                </a>
-            </div>
-        </nav>
+<div class="market-pulse">
+    <h3> Market Pulse</h3>
+    </div>
         <div class="inner-header flex">
             <div class="container">
-                <div class="row justify-content-center">
+                <div style="margin-top:4rem" class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="container">
 
@@ -68,24 +63,17 @@
                                                             </p>
                                                         </div>
                                                     </div>
-
-
                                                 <?php } ?>
                                                 <!--Listado de MODELOS X MARCA-->
                                             </ul>
                                         </div>
-
-
                                     </div>
                                 </div>
                             <?php } ?>
                             <!--Listados de MARCAS-->
-
-
-
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-none d-sm-block">
                         <img src="./assets/img/phone.png" width="400px" height="400px" alt="GIF Descargado">
                     </div>
                 </div>
@@ -106,7 +94,7 @@
         </div>
     </div>
     <div class="content flex">
-        <p>Design by <a href="https://epsiweb.com/" target="_blank">Epsiweb</a></p>
+    <p>Design by <a href="https://epsiweb.com/" target="_blank" class="epsiweb-link">Epsiweb</a></p>
     </div>
 
     <!-- Modal -->

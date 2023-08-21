@@ -221,14 +221,14 @@ ul li a {
 
 .modal-contenido {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 10vh auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 40%;
+  width: 90vw; /* Ancho relativo */
+  max-width: 500px; /* Máximo ancho */
   border-radius: 10px;
   position: relative;
 }
-
 .modal__title {
   margin-bottom: 10px;
 }
@@ -257,4 +257,18 @@ ul li a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+.epsiweb-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.market-pulse {
+  position: absolute;
+  top: 10px;
+  right: 120px;
+  font-weight: bold;
+  font-size: 18px; 
 }
