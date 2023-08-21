@@ -1,11 +1,13 @@
 const modal = document.querySelector('.modal');
 const modalBtns = document.querySelectorAll('.btn-modal');
 const closeBtn = document.querySelector('.modal__button--no');
+const hidden = document.querySelectorAll('.hidden-input');
 
 // Agrega event listeners a los botones para mostrar el modal
 modalBtns.forEach(function(btn) {
     btn.addEventListener('click', () => {
         modal.style.display = 'block';
+        
     });
 });
 

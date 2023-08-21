@@ -14,9 +14,9 @@
 
 <body>
     <div class="header">
-<div class="market-pulse">
-    <h3> Market Pulse</h3>
-    </div>
+        <div class="market-pulse">
+            <h3> Market Pulse</h3>
+        </div>
         <div class="inner-header flex">
             <div class="container">
                 <div style="margin-top:4rem" class="row justify-content-center">
@@ -26,7 +26,7 @@
                             <!--Listados de MARCAS-->
                             <?php
                             //Se redujo la consulta a 4 registros para realizar un test
-                            $sql_brand = "SELECT DISTINCT brand FROM catalogo LIMIT 4";
+                            $sql_brand = "SELECT DISTINCT brand FROM catalogo";
                             $brand_results = mysqli_query($conn, $sql_brand);
 
                             while ($show_brand = mysqli_fetch_array($brand_results)) {
@@ -40,29 +40,22 @@
                                                 <!--Listado de MODELOS X MARCA-->
                                                 <?php
                                                 //Se redujo la consulta a 3 registros para realizar el test
-                                                $sql_model = "SELECT * FROM catalogo WHERE brand = '" . $show_brand['brand'] . "' LIMIT 3";
+                                                $sql_model = "SELECT * FROM catalogo WHERE brand = '" .$show_brand['brand']."'";
                                                 $model_results = mysqli_query($conn, $sql_model);
                                                 while ($show_model = mysqli_fetch_array($model_results)) {
 
 
                                                 ?>
+
+
                                                     <li><a class="btn-modal" href="#"><?php echo $show_model['model'] ?></a></li>
 
-                                                    <!-- Modal -->
-                                                    <!--Todavia falta cambiar el TAG del modal para q muestre el producto q corresponde-->
-                                                    <div class="modal">
-                                                        <div class="modal-contenido">
-                                                            <span class="close modal__button modal__button--no">&times;</span>
-                                                            <h3 class="modal__title"><?php echo $show_model['model'] ?></h3>
-                                                            <p class="modal__text">
-                                                                <?php echo $show_model['product_name'] ?>
-                                                            </p>
-                                                            <p class="modal__text">
-                                                              Memory: <?php echo $show_model['memory'] ?> </br>
-                                                              Display Resolution: <?php echo $show_model['display_resolution'] ?>
-                                                            </p>
-                                                        </div>
-                                                    </div>
+                                                   
+
+
+
+
+
                                                 <?php } ?>
                                                 <!--Listado de MODELOS X MARCA-->
                                             </ul>
@@ -71,6 +64,8 @@
                                 </div>
                             <?php } ?>
                             <!--Listados de MARCAS-->
+
+
                         </div>
                     </div>
                     <div class="col-md-6 d-none d-sm-block">
@@ -94,14 +89,14 @@
         </div>
     </div>
     <div class="content flex">
-    <p>Design by <a href="https://epsiweb.com/" target="_blank" class="epsiweb-link">Epsiweb</a></p>
+        <p>Design by <a href="https://epsiweb.com/" target="_blank" class="epsiweb-link">Epsiweb</a></p>
     </div>
 
     <!-- Modal -->
-    <!--div class="modal">
+    <div class="modal">
         <div class="modal-contenido">
             <span class="close modal__button modal__button--no">&times;</span>
-            <h3 class="modal__title">Lorem ipsum dolor</h3>
+            <h3 class="modal__title">Title</h3>
             <p class="modal__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga et quos eligendi,
                 cumque iusto, tenetur consequatur sit laborum qui est voluptates veniam,
@@ -114,7 +109,7 @@
                 quisquam ipsum, aut quis.
             </p>
         </div>
-    </div-->
+    </div>
 
 
 
