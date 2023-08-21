@@ -54,6 +54,7 @@
                                                     <li><a class="btn-modal" href="#"><?php echo $show_model['model'] ?></a></li>
 
                                                     <!-- Modal -->
+                                                    <!--Todavia falta cambiar el TAG del modal para q muestre el producto q corresponde-->
                                                     <div class="modal">
                                                         <div class="modal-contenido">
                                                             <span class="close modal__button modal__button--no">&times;</span>
