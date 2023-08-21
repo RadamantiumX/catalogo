@@ -1,3 +1,4 @@
+<?php include('conn.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,45 +27,61 @@
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="container">
-                            <div class="faq-drawer">
-                                <input class="faq-drawer__trigger" id="faq-drawer" type="checkbox" /><label
-                                    class="faq-drawer__title" for="faq-drawer">Marca 1</label>
-                                <div class="faq-drawer__content-wrapper">
-                                    <div class="faq-drawer__content">
-                                        <ul>
-                                            <li><a class="btn-modal" href="#">Modelo 1</a></li>
-                                            <li><a class="btn-modal" href="#">Modelo 2</a></li>
-                                            <li><a class="btn-modal" href="#">Modelo 3</a></li>
-                                        </ul>
+
+                            <!--Listados de MARCAS-->
+                            <?php
+                            //Se redujo la consulta a 4 registros para realizar un test
+                            $sql_brand = "SELECT DISTINCT brand FROM catalogo LIMIT 4";
+                            $brand_results = mysqli_query($conn, $sql_brand);
+
+                            while ($show_brand = mysqli_fetch_array($brand_results)) {
+                            ?>
+                                <div class="faq-drawer">
+                                    <input class="faq-drawer__trigger" id="faq-drawer<?php echo $show_brand['brand'] ?>" type="checkbox" /><label class="faq-drawer__title" for="faq-drawer<?php echo $show_brand['brand'] ?>"><?php echo $show_brand['brand'] ?></label>
+                                    <div class="faq-drawer__content-wrapper">
+
+                                        <div class="faq-drawer__content">
+                                            <ul>
+                                                <!--Listado de MODELOS X MARCA-->
+                                                <?php
+                                                //Se redujo la consulta a 3 registros para realizar el test
+                                                $sql_model = "SELECT * FROM catalogo WHERE brand = '" . $show_brand['brand'] . "' LIMIT 3";
+                                                $model_results = mysqli_query($conn, $sql_model);
+                                                while ($show_model = mysqli_fetch_array($model_results)) {
+
+
+                                                ?>
+                                                    <li><a class="btn-modal" href="#"><?php echo $show_model['model'] ?></a></li>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal">
+                                                        <div class="modal-contenido">
+                                                            <span class="close modal__button modal__button--no">&times;</span>
+                                                            <h3 class="modal__title"><?php echo $show_model['model'] ?></h3>
+                                                            <p class="modal__text">
+                                                                <?php echo $show_model['product_name'] ?>
+                                                            </p>
+                                                            <p class="modal__text">
+                                                              Memory: <?php echo $show_model['memory'] ?> </br>
+                                                              Display Resolution: <?php echo $show_model['display_resolution'] ?>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+                                                <?php } ?>
+                                                <!--Listado de MODELOS X MARCA-->
+                                            </ul>
+                                        </div>
+
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="faq-drawer">
-                                <input class="faq-drawer__trigger" id="faq-drawer-2" type="checkbox" /><label
-                                    class="faq-drawer__title" for="faq-drawer-2">Marca 2</label>
-                                <div class="faq-drawer__content-wrapper">
-                                    <div class="faq-drawer__content">
-                                        <ul>
-                                            <li><a class="btn-modal" href="#">Modelo 1</a></li>
-                                            <li><a class="btn-modal" href="#">Modelo 2</a></li>
-                                            <li><a class="btn-modal" href="#">Modelo 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="faq-drawer">
-                                <input class="faq-drawer__trigger" id="faq-drawer-3" type="checkbox" /><label
-                                    class="faq-drawer__title" for="faq-drawer-3">Marca 3</label>
-                                <div class="faq-drawer__content-wrapper">
-                                    <div class="faq-drawer__content">
-                                        <ul>
-                                            <li><a class="btn-modal" href="#">Modelo 1</a></li>
-                                            <li><a class="btn-modal" href="#">Modelo 2</a></li>
-                                            <li><a class="btn-modal" href="#">Modelo 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
+                            <!--Listados de MARCAS-->
+
+
+
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -74,11 +91,9 @@
             </div>
         </div>
         <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <defs>
-                    <path id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                 </defs>
                 <g class="parallax">
                     <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
@@ -94,7 +109,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal">
+    <!--div class="modal">
         <div class="modal-contenido">
             <span class="close modal__button modal__button--no">&times;</span>
             <h3 class="modal__title">Lorem ipsum dolor</h3>
@@ -110,7 +125,7 @@
                 quisquam ipsum, aut quis.
             </p>
         </div>
-    </div>
+    </div-->
 
 
 
