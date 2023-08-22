@@ -10,7 +10,7 @@
 
 body {
 	min-height: 100vh;
-	background-image: url('https://raw.githubusercontent.com/hosseinnabi-ir/Responsive-Glass-Sidebar-using-CSS-and-JavaScript/Main/images/bg.jpg');
+	background-color: #dadada;
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: 'Roboto', sans-serif;
@@ -308,9 +308,16 @@ body {
   }
 
   .select-container {
-    display: flex; 
+    display: flex;
+    justify-content: space-between;  
     
   }
+  .dropdown-form {
+    width: 48%; /* Ajustar el ancho de los formularios */
+}
+.dropdown-select-box {
+  width: 100%; /* Hacer los dropdown más largos */
+}
   
   .select-container select {
    
@@ -400,7 +407,7 @@ body {
   }
   
   .dropdown-select.wide {
-      width: 70%;
+      width: 200%;
       
   }
   
@@ -497,21 +504,37 @@ body {
   }
   
 
-  @media(max-width: 34em) {
-    .select-container {
+ /* Tu CSS actual... */
+
+/* Nuevas modificaciones para el diseño responsive */
+@media(max-width: 34em) {
+  .select-container {
       display: block;
-    }
-  
-    .select-container select {
+  }
+
+  .select-container select {
       font-size: 12px;
       height: 30px;
       line-height: 28px;
       margin-right: 0;
       margin-bottom: 10px; 
-      width: 100%;
-    }
- 
+      width: 100%; /* Ajuste a 100% de ancho */
   }
+
+  .form-dropdown {
+      width: 100% !important; /* Ocupar el 100% del ancho */
+  }
+  .dropdown-select.wide {
+    width: 100%;
+  }
+
+  .dropdown-select-box {
+      width: 100% !important; /* Ocupar el 100% del ancho */
+  }
+
+  /* Resto de tu CSS para dispositivos móviles... */
+}
+
 
 /* 
   producto detail */
@@ -525,13 +548,13 @@ body {
   }
 
 .producto {
-  color: white; /* Cambia el color del texto a blanco */
+  color: rgb(12, 12, 12); /* Cambia el color del texto a blanco */
 }
 
 .producto h1,
 .producto li,
 .producto a {
-  color: white; /* Cambia el color del texto a blanco */
+  color:  rgb(12, 12, 12); /* Cambia el color del texto a blanco */
 }
 
 /* Si deseas mantener algunos elementos con otros colores, puedes ajustar los selectores según sea necesario */

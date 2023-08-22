@@ -88,9 +88,9 @@
             <!-- dropdown search de marcas -->
             <div class="main">
                 <div class="select-container">
-                   <form action="products.php" method="post" id="brand-form">
+                   <form action="products.php" method="post" id="brand-form" class="form-dropdown">
                     <select onchange="document.getElementById('brand-form').submit()" id="select-brand" name="marca">
-                        <option selected>Seleccione una opcion</option>
+                        <option selected>Marca</option>
                         <?php
                         $sql_brand = "SELECT DISTINCT brand FROM catalogo";
                         $b_results = mysqli_query($conn, $sql_brand);
@@ -104,7 +104,7 @@
                     </select>
                      </form>
                     <!-- dropdown search de modelos -->
-                    <form action="products.php" method="post" id="model-form">
+                    <form action="products.php" method="post" id="model-form" class="form-dropdown">
                     <select onchange="document.getElementById('model-form').submit()" id="model-select"  name="modelo">
                      <option selected>Modelo</option>
                        <?php 
@@ -144,7 +144,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <!-- imagen del producto -->
-                            <img style="width: 100%; max-width: 100%;" src="<?php echo $product['image_path'] ?>" alt="Producto de alta Tecnologia, SmartPhones, Tablets, Notebooks" />
+                            <img style="width:10rem; max-width: 100%;" src="<?php echo $product['image_path'] ?>" alt="Producto de alta Tecnologia, SmartPhones, Tablets, Notebooks" />
                         </div>
                         <div class="col-md-8">
                             <h1><?php echo $product['brand']." | ".$product['model']  ?></h1>
