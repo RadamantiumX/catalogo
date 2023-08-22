@@ -1,13 +1,19 @@
 <?php 
 include('conn.php');
+$data = json_decode(file_get_contents('php://input'), true);
 
-$catId = $_GET['id'];
+$brand = $data['params'];
 
-$sql_id = "SELECT * FROM catalogo WHERE catID = $catId";
+$sql_brand = "SELECT * FROM catalogo WHERE brand = '$brand'";
+$result = mysqli_query($conn, $sql_brand);
+$response = array();
+while($row = mysqli_fetch_assoc($result))
+{
+    $response[] = $row;
+}
 
-$id_results = mysqli_query($conn, $sql_id);
+header('Content-Type: application/json');
+echo json_encode($response);
 
-$json_results = mysqli_fetch_array($id_results);
 
-?>
 

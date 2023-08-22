@@ -1,3 +1,4 @@
+<?php include('conn.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,20 +89,29 @@
             <!-- dropdown search de marcas -->
             <div class="main">
                 <div class="select-container">
-                    <select name="Marca">
-                        <option value="1">Marca</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
+                    
+                    <select id="select-brand" onchange="handleBrand()" name="Marca">
+                    <option selected>Seleccione una opcion</option>
+                        <?php
+                         $sql_brand = "SELECT DISTINCT brand FROM catalogo";
+                         $b_results = mysqli_query($conn, $sql_brand);
+                         while($show_b = mysqli_fetch_assoc($b_results)){
+
+                         
+                        ?>
+                        <option value="<?php echo $show_b['brand'] ?>"><?php echo $show_b['brand'] ?></option>
+                        
+                        <?php } ?>
                     </select>
 
                     <!-- dropdown search de modelos -->
 
-                    <select name="Modelo">
-                        <option value="1">Modelo</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
+                    <select id="model-select" name="Modelo">
+                        <option selected>Modelo</option>
+
+                        
+                        
+                        
                     </select>
                 </div>
             </div>
@@ -145,6 +155,8 @@
 
 
 
+                <!--AXIOS-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -155,6 +167,7 @@
                 <script src="https://kit.fontawesome.com/39f24fdfe8.js" crossorigin="anonymous"></script>
                 <script src="./js/sidebar.js"></script>
                 <script src="./js/dropdown.js"></script>
+                <script src="./js/request.js"></script>
 
 
 </body>
