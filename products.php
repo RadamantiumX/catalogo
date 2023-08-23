@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+   <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Catálogo</title>
 </head>
 
@@ -148,19 +148,76 @@
                         </div>
                         <div class="col-md-8">
                             <h1><?php echo $product['brand']." | ".$product['model']  ?></h1>
-                            <h3>Características</h3>
+                            <h3>Basics:</h3>
                             <ul>
-                                <li>Pantalla de <?php echo $product['display_size_and_technology'] ?></li>
-                                <li>Dimensiones:  <?php echo $product['Dimensions'] ?>.</li>
-                                <li>Memoria de almacenamiento de <?php echo $product['memory'] ?> y espacio ilimitado en Google Cloud para fotos y videos 4k.</li>
-                                <li>Cámara principal de <?php echo $product['rear_camera'] ?> con doble flash y frontal de <?php echo $product['front_camera'] ?>.</li>
-                                <li><?php echo $product['features'] ?></li>
-                                <li><?php echo $product['Lithium_Battery'] ?></li>
-                                <li><?php echo $product['RAM__DDR3_'] ?> Memoria RAM</li>
-                                <li>Android OS: <?php echo $product['android_version'] ?></li>
-                                <li><a href="<?php echo $product['Product_URL'] ?>" target="new">Link de compra</a></li>
+                                <li>Model: <?php echo $product['SoC_model'] ?></li>
+                                <li>Speed:  <?php echo $product['core_speed'] ?>.</li>
+                                <li>Archictecture: </li>                       
+                                <li>Core Count: <?php echo $product['rear_camera'] ?></li>
+                                <li>RAM: <?php echo $product['RAM__DDR3_'] ?></li>
+                                <li>Storage: <?php echo $product['memory'] ?></li>
+                                <li>External Support: <?php echo $product['SD_Card'] ?></li>
+                                
                             </ul>
                         </div>
+
+                        <div class="col-md-8">
+                            
+                            <h3>Display:</h3>
+                            <ul>
+                                <li>Screen Size: <?php echo $product['display_size_and_technology'] ?></li>
+                                <li>Horizontal:  </li>
+                                <li>Ratio: <?php echo $product['display_ratio'] ?> </li>                       
+                                <li>Curve Edge: </li>
+                                <li>Screen Type: <?php echo $product['display_technology'] ?></li>
+                                <li>Protection: <?php echo $product['glass_type'] ?></li>
+                                <li>Vertical: </li>
+                                <li>Touch: <?php echo $product['touch_panel_capacitive_points'] ?></li>
+                                <li>Refresh Rate: <?php echo $product['display_refresh_frequency'] ?></li>
+                                <li>PPI: <?php echo $product['pixel_density'] ?></li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="col-md-8">
+                            
+                            <h3>Communications:</h3>
+                            <ul>
+                                <li>WIFI: <?php echo $product['Wifi'] ?></li>
+                                <li>Bluetooth:  <?php echo $product['Bluetooth'] ?>.</li>
+                                <?php if(empty($product['GPS'])) {?>
+                                <li>GPS: NO</li> 
+                                <?php }else{ ?>
+                                <li>GPS: YES</li>   
+                                <?php } ?> 
+                                <?php if(empty($product['NFC'])) {?>                      
+                                <li>NFC: NO</li>
+                                <?php }else{ ?>
+                                <li>NFC: Supported</li>
+                                <?php } ?>   
+                                <li>5G: </li>
+                                <li>Netowork Type: </li>
+                                <li>5G USA: </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="col-md-8">
+                            
+                            <h3>Cammera:</h3>
+                            <ul>
+                                <li>Rear Camera: <?php echo $product['rear_camera'] ?></li>
+                                <li>Rear Camera 2:  <?php echo $product['rear_camera_2'] ?>.</li>
+                                <li>Rear Camera 3: <?php echo $product['rear_camera_3'] ?></li>                       
+                                <li>Rear Camera 4: <?php echo $product['rear_camera_4'] ?></li>
+                                <li>Front Camera: <?php echo $product['front_camera'] ?></li>
+                                <li>Rear Camera Video Recording: <?php echo $product['rear_camera_video_recording'] ?></li>
+                                <li>Front Camera Video Recording: <?php echo $product['front_camera_video_recording'] ?></li>
+                                
+                            </ul>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
